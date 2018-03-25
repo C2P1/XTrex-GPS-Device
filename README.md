@@ -20,14 +20,14 @@ Selecting the Where To screen prompts the user to enter a destination. This dest
 Opening the Map screen  then displays the users location with the current directions step and the distance to the next turn. On the top left features status symbols for GPS connectivity, speach availability, and gps availability, respectively. 
 
 <p align="center">
-<img src="https://github.com/C2P1/XTrex-GPS-Device/blob/master/xtrex/src/main/resources/img/MapMode.png" width="240">
+<img src="https://github.com/C2P1/XTrex-GPS-Device/blob/master/src/main/resources/img/MapMode.png" width="240">
 </p>
 
 Returning to the main menu and entering the Speech menu allows the user to select a language for the device to speak the turn by turn directions. 
 This is done by sending the directions downloaded by the Google Maps API to the Microsoft Cognitive Services (Bing Speech) API and downloading the audio files to save locally. The directions are spoken when the user is 10m from the next turn. 
 
 <p align="center">
-<img src="https://github.com/C2P1/XTrex-GPS-Device/blob/master/xtrex/src/main/resources/img/LanguageMenu.png" width="240">
+<img src="https://github.com/C2P1/XTrex-GPS-Device/blob/master/src/main/resources/img/LanguageMenu.png" width="240">
 </p>
 
 On top of this, the device will display notifications via a small popup window at the top of the screen. In conjunction with this, if speech is enabled, the device will verbally say the notification out loud in the language the device is currently set to. The notifications are used to tell the user about such events as GPS connectivity (GPS lost, or GPS back online), internet connectivity, maps availability, and more. 
@@ -35,7 +35,7 @@ On top of this, the device will display notifications via a small popup window a
 The other menus display helpful information to the user such as the current latitude and longitude, distance travelled, and the current travelling speed. This screen is for satellite information. 
 
 <p align="center">
-<img src="https://github.com/C2P1/XTrex-GPS-Device/blob/master/xtrex/src/main/resources/img/Satellite.png" width="240">
+<img src="https://github.com/C2P1/XTrex-GPS-Device/blob/master/src/main/resources/img/Satellite.png" width="240">
 </p>
 
 ## Building the Program
