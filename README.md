@@ -12,7 +12,7 @@ The XTrex is a hand-held device measuring 54mm × 103mm × 33mm. On the front, i
 The default screen of the device is the main menu which shows the different features of the device. 
 
 <p align="center">
-<img src="https://github.com/C2P1/XTrex-GPS-Device/blob/master/xtrex/src/main/resources/img/MainMenu.png" width="240">
+<img src="https://github.com/C2P1/XTrex-GPS-Device/blob/master/src/main/resources/img/MainMenu.png" width="240">
 </p>
 
 Selecting the Where To screen prompts the user to enter a destination. This destination is sent to Google Maps API where the map and directions are downloaded from. 
