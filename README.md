@@ -40,19 +40,39 @@ The other menus display helpful information to the user such as the current lati
 
 ## Building the Program
 
+1. Clone the repo
 <code> 
 git clone https://github.com/C2P1/XTrex-GPS-Device.git
+</code> 
 
+
+2. cd in to the directory  XTrex-GPS-Device 
+<code> 
 cd XTrex-GPS-Device
+</code> 
+
+
+3. clean install the building using maven
+<code>
+mvn clean install
 </code>
 
-Add the jar files to the class path:  
+
+4. cd in to the classes directory
+<code>
+cd target/classes
+</code>
+
+
+5. Add the jar files to the class path:  
 
 mac:   
+
 
 <code>
 export CLASSPATH=json-simple-1.1.jar:RXTXcomm.jar:.:./*
 </code>
+
 
 windows:  
 
@@ -61,6 +81,21 @@ set CLASSPATH=RXTXcomm.jar;json-simple1.1.jar;.;./*
 </code>
 
 ## Running the Program 
+
+Inside of the classes directory, if no GPS dongle is inserted run the program with a false flag
+<code>
+java xtrex.xtrex -false
+</code>
+
+
+If a GPS dongle is inserted, run without a flag
+<code>
+java xtrex.xtrex
+</code>
+
+
+
+
 
 
 
