@@ -63,7 +63,7 @@ if no GPS dongle is inserted run the program with a false flag
 
 <code>
 java target/project-1.0-SNAPSHOT-jar-with-dependencies.jar -false
-</code>
+</code>  
 
 
 If a GPS dongle is inserted, run without a flag
