@@ -2,8 +2,8 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>teamk.xtrex</groupId>
-  <artifactId>xtrex</artifactId>
+  <groupId>xtrex</groupId>
+  <artifactId>project</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
@@ -23,27 +23,19 @@
     </dependency>
     
     <dependency>
-      <groupId>xtrex.rxtxcomm</groupId>
+      <groupId>rxtxcomm</groupId>
       <artifactId>rxtxcomm</artifactId>
       <version>1</version>
       <scope>system</scope>
-      <systemPath>${project.basedir}/src/main/java/RXTXcomm.jar</systemPath>
+      <systemPath>${project.basedir}/src/lib/RXTXcomm.jar</systemPath>
     </dependency>
 
     <dependency>
-      <groupId>xtrex.json</groupId>
-      <artifactId>json</artifactId>
-      <version>1</version>
-      <scope>system</scope>
-      <systemPath>${project.basedir}/src/main/java/json-simple-1.1.jar</systemPath>
-    </dependency>
-
-    <dependency>
-      <groupId>xtrex.json-simple-1.1</groupId>
+      <groupId>json-simple-1.1</groupId>
       <artifactId>json-simple-1.1</artifactId>
       <version>1</version>
       <scope>system</scope>
-      <systemPath>${project.basedir}/src/main/java/json-simple-1.1.jar</systemPath>
+      <systemPath>${project.basedir}/src/lib/json-simple-1.1.jar</systemPath>
     </dependency>
 
     
@@ -51,20 +43,39 @@
 
   <build>
     <plugins>
+      
       <plugin>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <executions>
-            <execution>
-                <phase>install</phase>
-                <goals>
-                    <goal>copy-dependencies</goal>
-                </goals>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.3</version>
                 <configuration>
-                    <outputDirectory>${project.build.directory}/src/main/java</outputDirectory>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
-            </execution>
-        </executions>
-      </plugin>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <configuration>
+                    <mainClass>xtrex/xtrex</mainClass>
+                </configuration>
+            </plugin>
+
+      <plugin>
+      <!-- Build an executable JAR -->
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-jar-plugin</artifactId>
+      <version>3.0.2</version>
+      <configuration>
+        <archive>
+          <manifest>
+            <addClasspath>true</addClasspath>
+            <classpathPrefix>lib/</classpathPrefix>
+            <mainClass>xtrex.xtrex</mainClass>
+          </manifest>
+        </archive>
+      </configuration>
+    </plugin>
     </plugins>
   </build>
 </project>
