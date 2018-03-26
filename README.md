@@ -52,45 +52,23 @@ cd XTrex-GPS-Device
 </code> 
 
 
-3. clean install the building using maven
+3. clean and package the project using maven
 <code>
-mvn clean install
-</code>
-
-
-4. cd in to the classes directory
-<code>
-cd target/classes
-</code>
-
-
-5. Add the jar files to the class path:  
-
-mac:   
-
-
-<code>
-export CLASSPATH=json-simple-1.1.jar:RXTXcomm.jar:.:./*
-</code>
-
-
-windows:  
-
-<code>
-set CLASSPATH=RXTXcomm.jar;json-simple1.1.jar;.;./*
+mvn clean package
 </code>
 
 ## Running the Program 
 
-Inside of the classes directory, if no GPS dongle is inserted run the program with a false flag
+if no GPS dongle is inserted run the program with a false flag  
+
 <code>
-java xtrex.xtrex -false
+java target/project-1.0-SNAPSHOT-jar-with-dependencies.jar -false
 </code>
 
 
 If a GPS dongle is inserted, run without a flag
 <code>
-java xtrex.xtrex
+jar target/project-1.0-SNAPSHOT-jar-with-dependencies.jar
 </code>
 
 
