@@ -40,22 +40,22 @@ The other menus display helpful information to the user such as the current lati
 
 ## Building the Program
 
-1. Clone the repo
-<code> 
-git clone https://github.com/C2P1/XTrex-GPS-Device.git
-</code> 
+1. Clone the repo  
+    <code> 
+    git clone https://github.com/C2P1/XTrex-GPS-Device.git
+    </code> 
 
 
-2. cd in to the directory  XTrex-GPS-Device 
-<code> 
-cd XTrex-GPS-Device
-</code> 
+2. cd in to the directory  XTrex-GPS-Device  
+    <code> 
+    cd XTrex-GPS-Device
+    </code> 
 
 
-3. clean and package the project using maven
-<code>
-mvn clean package
-</code>
+3. clean and package the project using maven  
+    <code>
+    mvn clean package
+    </code>
 
 ## Running the Program 
 
@@ -65,8 +65,8 @@ if no GPS dongle is inserted run the program with a false flag
 java target/project-1.0-SNAPSHOT-jar-with-dependencies.jar -false
 </code>  
 
-
 If a GPS dongle is inserted, run without a flag
+
 <code>
 jar target/project-1.0-SNAPSHOT-jar-with-dependencies.jar
 </code>
