@@ -1,7 +1,5 @@
 package xtrex;
-/*
-* Win7 Ublox7 reader.
-*/   
+
 public class xtrex {
     public static Boolean gpsEnabled;
     private static Thread gpsThread = null;

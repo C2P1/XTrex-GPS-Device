@@ -45,8 +45,8 @@ public class StatusPane extends JPanel{
         public StatusIcon(String iconName, String altIconName, int iconScale){
             try{
 
-                ImageIcon img = new ImageIcon(new ImageIcon(ImageIO.read(new File(iconName))).getImage().getScaledInstance(iconScale, iconScale, Image.SCALE_SMOOTH));
-                ImageIcon altImg = new ImageIcon(new ImageIcon(ImageIO.read(new File(altIconName))).getImage().getScaledInstance(iconScale, iconScale, Image.SCALE_SMOOTH));
+                ImageIcon img = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResourceAsStream(iconName))).getImage().getScaledInstance(iconScale, iconScale, Image.SCALE_SMOOTH));
+                ImageIcon altImg = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResourceAsStream(altIconName))).getImage().getScaledInstance(iconScale, iconScale, Image.SCALE_SMOOTH));
                 
                 icon = img;
                 errorIcon = altImg;

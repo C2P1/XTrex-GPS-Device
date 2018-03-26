@@ -38,7 +38,7 @@ public class MapView extends Screen {
     private MapView() {
         this.gps = GPSparser.getInstance();
         try {
-            this.cursorImg = ImageIO.read(new File("img/cursor.png"));
+            this.cursorImg = ImageIO.read(this.getClass().getClassLoader().getResourceAsStream("img/cursor.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
