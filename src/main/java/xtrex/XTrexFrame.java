@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -99,7 +100,9 @@ public class XTrexFrame extends JLayeredPane implements ActionListener {
         this.setPreferredSize(Style.DEVICE_SIZE);
         constraints.insets = new Insets(40, 0, 0, 3); // Offsets to position the display correctly in the xtrex frame.
         try{
-            BufferedImage img = ImageIO.read(new File("img/bg.png"));
+            //BufferedImage img = ImageIO.read(new File("img/bg.png"));
+
+            BufferedImage img = ImageIO.read(this.getClass().getClassLoader().getResourceAsStream("img/bg.png"));
 
             label.setIcon(new ImageIcon(new ImageIcon(img).getImage().getScaledInstance(Style.DEVICE_SIZE.width, Style.DEVICE_SIZE.height, Image.SCALE_SMOOTH)));
             label.setSize(Style.DEVICE_SIZE);

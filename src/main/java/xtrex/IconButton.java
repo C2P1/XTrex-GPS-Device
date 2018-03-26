@@ -71,9 +71,9 @@ public class IconButton extends PrefabButton{
         super(displayString);
 
         try {
-            BufferedImage img = ImageIO.read(new File(iconName));
+            BufferedImage img = ImageIO.read(this.getClass().getClassLoader().getResourceAsStream(iconName));
             icon = new ImageIcon(new ImageIcon(img).getImage().getScaledInstance(iconScale, iconScale, Image.SCALE_SMOOTH));
-            BufferedImage selectedImg = ImageIO.read(new File(selectedIconName));
+            BufferedImage selectedImg = ImageIO.read(this.getClass().getClassLoader().getResourceAsStream(selectedIconName));
             selectedIcon = new ImageIcon(new ImageIcon(selectedImg).getImage().getScaledInstance(iconScale, iconScale, Image.SCALE_SMOOTH));
         } catch(IOException e) {
             e.printStackTrace();

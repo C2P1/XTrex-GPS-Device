@@ -25,7 +25,7 @@ public class AboutView extends Screen{
         content = new JLabel();
         try {
             content.setIcon(new ImageIcon(new ImageIcon(ImageIO.read(
-                new File("img/about.png"))).getImage().getScaledInstance(
+                this.getClass().getClassLoader().getResourceAsStream("img/about.png"))).getImage().getScaledInstance(
                     Style.SCREEN_SIZE.width, Style.SCREEN_SIZE.height, Image.SCALE_SMOOTH)));
         } catch (IOException e) {
             e.printStackTrace();
