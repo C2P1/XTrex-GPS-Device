@@ -80,11 +80,8 @@ public class IconButton extends PrefabButton{
 
         setIcon(icon);
 
-
-
         setHorizontalTextPosition(iconAlignment.getHorizontalPosition());
         setVerticalTextPosition(iconAlignment.getVerticalPosition());
-
     }
 
     /**

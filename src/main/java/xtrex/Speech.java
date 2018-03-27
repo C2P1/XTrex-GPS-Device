@@ -127,17 +127,22 @@ public class Speech {
 	 * @param File is the file name of the audio file to play
 	 */
 	public static void playAudio(String fileName) {
+        // load the input steam of the file
         InputStream inputStream = Speech.class.getClassLoader().getResourceAsStream("audio/" + fileName + ".wav");
+        // only play the audio if speech is on
         if (model.getLanguage() != LanguageEnum.OFF) {
             try {
+                // get the audio input stream from the input stream
                 final AudioInputStream audioIn = AudioSystem.getAudioInputStream(inputStream);
+                // play audio on a new thread so that other functionality in the device is not hindered
                 Thread thread = new Thread(new Runnable() {
                     public void run() { 
                         Clip clip;
                         try {
-                            clip = AudioSystem.getClip(null);
+                            clip = AudioSystem.getClip(null); // pass null to work on linux
                             clip.open(audioIn);
                             clip.start();
+                            // thread needs to be slept whilst audio finished playing
                             Thread.sleep(clip.getMicrosecondLength()/MICROSECONDS_IN_MILISECOND);
                         } catch (LineUnavailableException e) {
                             Speech.setSpeechAvailability(false);
@@ -149,6 +154,7 @@ public class Speech {
                         }
                     }
                 });
+                // start the thread to play the audio
                 thread.start();
             } catch (UnsupportedAudioFileException e) {
                 Speech.setSpeechAvailability(false);
@@ -159,7 +165,7 @@ public class Speech {
     }
 
     /**
-     * play audio notifications
+     * play audio notifications from the notifications enum
      * 
      * @param NotificationsEnum notification to be played
      */

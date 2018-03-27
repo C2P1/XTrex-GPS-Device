@@ -45,11 +45,12 @@ public class AboutView extends Screen{
         return Loader.instance;
 	}
 
+    /* No need to implemented functionality of the buttons 
+     * for this screen
+     */
 	public void onMinusButtonPressed() {}
 
 	public void onPlusButtonPressed() {}
 
 	public void onSelectButtonPressed() {}
-
-
 } 
