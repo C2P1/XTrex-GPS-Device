@@ -1,7 +1,7 @@
 package xtrex;
 
-import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -9,8 +9,6 @@ import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import xtrex.SpeechModel.LanguageEnum;
-
-
 
 /**
  * Used as the API for all speech related components. 
@@ -129,10 +127,10 @@ public class Speech {
 	 * @param File is the file name of the audio file to play
 	 */
 	public static void playAudio(String fileName) {
-        File file = new File("audio/" + fileName + ".wav");
+        InputStream inputStream = Speech.class.getClassLoader().getResourceAsStream("audio/" + fileName + ".wav");
         if (model.getLanguage() != LanguageEnum.OFF) {
             try {
-                final AudioInputStream audioIn = AudioSystem.getAudioInputStream(file);
+                final AudioInputStream audioIn = AudioSystem.getAudioInputStream(inputStream);
                 Thread thread = new Thread(new Runnable() {
                     public void run() { 
                         Clip clip;

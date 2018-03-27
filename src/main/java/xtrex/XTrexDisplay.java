@@ -27,7 +27,7 @@ public class XTrexDisplay extends JFrame {
 			this.setUndecorated(true);
 			Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 			this.setBackground(new Color(0,0,0,1));
-			//this.setLocation(((dim.width-(Style.DEVICE_SIZE.width))/2), ((dim.height-(Style.DEVICE_SIZE.height))/2));
+			this.setLocation(((dim.width-(Style.DEVICE_SIZE.width))/2), ((dim.height-(Style.DEVICE_SIZE.height))/2));
 			//this.setLocation(200,200);
 		}
 
